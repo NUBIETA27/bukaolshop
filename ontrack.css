@@ -138,10 +138,7 @@ background: var(--bg-color);
 	padding:8px;
 	box-shadow: var(--box-shadow);
 }
-.search_wrap
-.search_wrap_4 
-.search_box 
-.input{
+.search_wrap.search_wrap_4 .search_box .input{
 	height: 67%;
 	padding-left: 15px; background: var(--bg-color);
 }
