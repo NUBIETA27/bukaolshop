@@ -122,7 +122,7 @@ z-index:2;
 box-shadow: var(--box-shadow);
 background: var(--bg-color);
 }
-.search_wrap .search_box .btn.btn_common 
+.search_wrap .search_box .btn.btn_common .bx
 {
 	position: relative;
 	top: -5px;
@@ -136,21 +136,6 @@ background: var(--bg-color);
 	width:33px;
 	height:33px;
 	padding:8px;
-	box-shadow: var(--box-shadow);
-}
-.bx{
-	position: relative;
-	top: -5px;
-	left: 73%;
-	transform: translate(-50%,-50%);
-	color: white;
-	font-size: 18px;
-	z-index: 3;
-	background:var(--ahsinulumamTukangngopi);
-	border-radius:50%;
-	width:33px;
-	height:33px;
-	padding:0px;
 	box-shadow: var(--box-shadow);
 }
 .search_wrap.search_wrap_4 .search_box .input{
