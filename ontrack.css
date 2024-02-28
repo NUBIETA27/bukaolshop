@@ -139,7 +139,19 @@ background: var(--bg-color);
 	box-shadow: var(--box-shadow);
 }
 .bx{
-	
+	position: relative;
+	top: -5px;
+	left: 73%;
+	transform: translate(-50%,-50%);
+	color: white;
+	font-size: 18px;
+	z-index: 3;
+	background:var(--ahsinulumamTukangngopi);
+	border-radius:50%;
+	width:33px;
+	height:33px;
+	padding:0px;
+	box-shadow: var(--box-shadow);
 }
 .search_wrap.search_wrap_4 .search_box .input{
 	height: 67%;
