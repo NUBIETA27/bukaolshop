@@ -131,7 +131,7 @@ background: var(--bg-color);
 	color: white;
 	font-size: 18px;
 	z-index: 3;
-	
+	background:var(--ahsinulumamTukangngopi);
 	border-radius:50%;
 	width:33px;
 	height:33px;
