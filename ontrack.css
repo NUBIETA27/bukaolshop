@@ -128,7 +128,7 @@ background: var(--bg-color);
 	top: -5px;
 	left: 73%;
 	transform: translate(-50%,-50%);
-	color: rgb(15, 6, 6);
+	color: #ffffff;
 	font-size: 18px;
 	z-index: 3;
 	background: white;
