@@ -21,38 +21,38 @@ float:left;
 border:0px;
 padding:3%;
 }
-	#navbar {
-		height:60px;
-		position: fixed;
-		bottom: 0px;
-		left:0%;
-		padding-top: 5px;
-		width: 100%;
-		border-radius:0px 0px 0px 0px;
-		display: block;
-	  
-		z-index:6;
+        #navbar {
+                height:60px;
+                position: fixed;
+                bottom: 0px;
+                left:0%;
+                padding-top: 5px;
+                width: 100%;
+                border-radius:0px 0px 0px 0px;
+                display: block;
+
+                z-index:6;
         background-color: var(--bg-color);
         background-size: 100% 100%;
         border-top-left-radius: 0px;
         border-top-right-radius: 0px;
         box-shadow: var(--box-shadow);
 }
-	
-	#navbar a {
-		width:20%;
-		float: left;
-		display: block;
-		color: #ff000000;
-		text-align: center;
-		padding-top: 0px;
-		
-		font-size: 14px;
-		font-family:poppins;	
-	}
-	#navbar a:hover {
-		color:#2e99a5 ;
-		cursor:none;
+
+        #navbar a {
+                width:20%;
+                float: left;
+                display: block;
+                color: #ff000000;
+                text-align: center;
+                padding-top: 0px;
+
+                font-size: 14px;
+                font-family:poppins;        
+        }
+        #navbar a:hover {
+                color:#2e99a5 ;
+                cursor:none;
 }
 #strip-navbar {
 width:30%;
@@ -67,7 +67,7 @@ margin-top:-30px;
  padding:6px;
 }
 .fflexx-container > div {
- 
+
   width: 100px;
   text-align: center;
   line-height: 1px;
@@ -80,7 +80,7 @@ margin-top:-30px;
   padding:0;
   color: rgb(0, 0, 0);
   border-radius:8px;
-  
+
 }
 </style>
 
@@ -89,32 +89,31 @@ margin-top:-30px;
 <header class="header">
 <div id="menu-btn">
 <!-- theme toggler  -->
-	<div class="container">
+        <div class="container">
 <div class="search_wrap search_wrap_4">
     <div class="search_box">
         <div style="z-index:3;" class="btn btn_common">
 
-<img class="bx" src="{{foto_profil}}">
 <p class="input"data-content='Welcome!' id='greetings'>
 </div>
     </div></div></div></div>
-    
+
 <div id="theme-toggler" class="fas fa-moon"></div>
 </header>
 
 <script>
- 
+
 
     <!--waktu otomatis-->  
     /*<![CDATA[*/
     var greetElem = document.querySelector("#greetings"); 
     var curHr = new Date().getHours(); 
     var greetMes = ["Wow! Masih Begadang?", 
-    "Hai.. {{nama_user}} Selamat Pagi!", 
-    "Hai.. {{nama_user}} Selamat Siang!", 
-    "Hai.. {{nama_user}} Selamat Sore!", 
-    "Hai.. {{nama_user}} Selamat Malam!", 
-    "Hai.. {{nama_user}} Belum Tidur ya?"]; 
+    "Hai.. Selamat Pagi!", 
+    "Hai.. Selamat Siang!", 
+    "Hai.. Selamat Sore!", 
+    "Hai.. Selamat Malam!", 
+    "Hai.. Belum Tidur ya?"]; 
     let greetText = ""; 
     if (curHr < 4) greetText = greetMes[0]; 
     else if (curHr < 11) greetText = greetMes[1]; 
@@ -129,7 +128,7 @@ margin-top:-30px;
 
 <div style='position:relative;margin-top: 18%; margin-left: 4.7%; margin-right: 2%;  padding:0px; background: var(--ahsinulumamTukangngopi);
  font-family: Arial;  height: auto; width: 90%; z-index:99;border-radius:15px 15px 15px 15px;'>
- 
+
 <img style='border-radius:15px 15px 15px 15px;width:100%' src="https://lh3.googleusercontent.com/u/0/d/1gJDDlUiAKQMtXhK743Bpu_ejHuMvDSyD">
 <img class="logo-headerr" src="https://i.ibb.co/kQVp8YS/20240227-220103.png">
 
@@ -146,14 +145,14 @@ ON-TRACK PPOB
 </div>
 
 <div class="katakataa">
-  {{id_user}}
+  {{nama_membership}}
 </div>
 
 </div>
 
 <!-- menu utama-->
 <div class="ex1">
-<div class="fflexx-container">	
+<div class="fflexx-container">        
   <div>
       <a href="https://ontrackppob.bukaolshop.site/digital/106141">
           <img style="height:45px;border-radius:50px;box-shadow: var(--box-shadow);margin-bottom:10px;padding:0px;background-color:var(--ahsinulumamTukangngopi);
@@ -170,7 +169,7 @@ ON-TRACK PPOB
   <h4 style="font-family: 'Poppins', sans-serif;font-size:12px;color:var(--black);
   ">Paket Data</h4>
   </div>
-    
+
  <div>
       <a href="https://jgjk.mobi/m/594615352465c0a0832f0e27.89033298">
         <img style="height:45px;border-radius:50px;box-shadow: var(--box-shadow);margin-bottom:10px;padding:0px;background-color:var(--ahsinulumamTukangngopi);
@@ -191,7 +190,7 @@ ON-TRACK PPOB
 
 </div>
 <div style="margin-top:15px;" class="fflexx-container">
-  
+
 
  <div>
       <a href="https://ontrackppob.bukaolshop.site/digital/266137"><img style="height:45px;border-radius:50px;box-shadow: var(--box-shadow);margin-bottom:10px;padding:0px;background-color:var(--ahsinulumamTukangngopi);" 
@@ -208,8 +207,8 @@ ON-TRACK PPOB
   <h4 style="font-family: 'Poppins', sans-serif;font-size:12px;color:var(--black);
   ">Game</h4>
   </div>
-    
-  
+
+
   <div>
       <a href="https://ontrackppob.bukaolshop.site/digital/99730"><img style="height:45px;border-radius:50px;box-shadow: var(--box-shadow);margin-bottom:10px;padding:0px;background-color:var(--ahsinulumamTukangngopi);
 " src="https://icodec.xyz/asset/images/app/qios-voucher/lightning.png"></a>
@@ -217,7 +216,7 @@ ON-TRACK PPOB
   <h4 style="font-familybg 'Poppins', sans-serif;font-size:12px;color:var(--black);
   ">PLN</h4>
   </div>
-  
+
    <div>
       <a href="#"><img style="height:45px;border-radius:50px;box-shadow: var(--box-shadow);margin-bottom:10px;padding:0px;background-color:var(--ahsinulumamTukangngopi);
 " src="https://icodec.xyz/asset/images/app/qios-voucher/other.png
@@ -285,6 +284,6 @@ Isi sendiri
     </section>
     </body>
     </html>
-    
+
     <!-- Custom Script -->
     <script src="https://ahsinulumam.github.io/Mr_m.js"></script>
