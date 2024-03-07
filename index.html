@@ -30,11 +30,18 @@
         font-size: small;
         float: left;
         width: 25%;
+        padding: 10px;
         height: 105px; /* Should be removed. Only for demonstration */
       }
-
+      .row {
+        background-color: #fff;
+        border: 1px solid #8a8a8a42;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 0px 0px 9px 9px;
+        text-align: center;
+      }
       /* Clear floats after the columns */
-      .tabcontent:after {
+      .row:after {
         content: "";
         display: table;
         clear: both;
@@ -45,37 +52,6 @@
         margin-bottom: 5px;
       }
 
-      /* Style tab links */
-      .tablink {
-        background-color: #ffffff;
-        color: rgb(58, 58, 58);
-        font-weight: bold;
-        float: left;
-        border-radius: 50px;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        padding: 5px 10px;
-        margin: 9px 9px 0px 9px;
-        font-size: 17px;
-        width: auto;
-      }
-
-      .tablink:hover {
-        background-color: gainsboro;
-      }
-
-      /* Style the tab content (and add height:100% for full page content) */
-      .tabcontent {
-        background-color: #fff;
-        color: rgb(0, 0, 0);
-        display: none;
-        padding-top: 65px;
-        height: 100%;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px 0 rgba(71, 71, 71, 0.2);
-
-      }
       /*style2*/
       .card2 {
         background-color: #fff;
@@ -94,17 +70,10 @@
     </style>
   </head>
   <body>
-    <button
-      class="tablink"
-      onclick="openPage('Home', this, 'gainsboro')"
-      id="defaultOpen"
-    >
-      Prabayar
-    </button>
-    <button class="tablink" onclick="openPage('News', this,)">Tagihan</button>
-
-    <div id="Home" class="tabcontent">
-      <!--card1-->
+    <!--card menu-->
+    <!--card1-->
+    <div class="judul">PEMBELIAN</div>
+    <div class="row">
       <div class="column">
         <div
           onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/106141'"
@@ -202,104 +171,105 @@
       </div>
     </div>
 
-    <div id="News" class="tabcontent">
-      <!--card2-->
-        <div class="column">
-          <div
-            onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/106141'"
-          >
-            <img
-              class="img"
-              src="https://i.ibb.co/c65pZC2/pulsa.jpg"
-              style="height: 45px"
-            />
-          </div>
-          <span>Listrik</span>
+    <!--card2-->
+    <div class="judul">PEMBAYARAN</div>
+    <div class="row">
+      <div class="column">
+        <div
+          onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/106141'"
+        >
+          <img
+            class="img"
+            src="https://i.ibb.co/c65pZC2/pulsa.jpg"
+            style="height: 45px"
+          />
         </div>
-
-        <div class="column">
-          <div
-            onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/71464'"
-          >
-            <img
-              class="img"
-              src="https://i.ibb.co/bP80ssF/paketdata.jpg"
-              style="height: 45px"
-            />
-          </div>
-          <span>PDAM</span>
-        </div>
-
-        <div class="column">
-          <div onclick="window.location.href='#'">
-            <img
-              class="img"
-              src="https://i.ibb.co/86T4svR/Tlpsms.jpg"
-              style="height: 45px"
-            />
-          </div>
-          <span>BPJS</span>
-        </div>
-
-        <div class="column">
-          <div onclick="window.location.href='#'">
-            <img
-              class="img"
-              src="https://i.ibb.co/GcJ2Ykk/Voucher.jpg"
-              style="height: 45px"
-            />
-          </div>
-          <span>PPB</span>
-        </div>
-
-        <div class="column">
-          <div
-            onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/266137'"
-          >
-            <img
-              class="img"
-              src="https://i.ibb.co/KGk8hfr/Ewallet.jpg"
-              style="height: 45px"
-            />
-          </div>
-          <span>Internet</span>
-        </div>
-
-        <div class="column">
-          <div onclick="window.location.href='#'">
-            <img
-              class="img"
-              src="https://i.ibb.co/YZPf73g/Tagihan.jpg"
-              style="height: 45px"
-            />
-          </div>
-          <span>TV</span>
-        </div>
-
-        <div class="column">
-          <div
-            onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/99730'"
-          >
-            <img
-              class="img"
-              src="https://i.ibb.co/26jMxqV/Tokenpln.jpg"
-              style="height: 45px"
-            />
-          </div>
-          <span>PLN</span>
-        </div>
-
-        <div class="column">
-          <div onclick="window.location.href='#'">
-            <img
-              class="img"
-              src="https://i.ibb.co/N27vXvc/Game.jpg"
-              style="height: 45px"
-            />
-          </div>
-          <span>Game</span>
-        </div>
+        <span>Listrik</span>
       </div>
+
+      <div class="column">
+        <div
+          onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/71464'"
+        >
+          <img
+            class="img"
+            src="https://i.ibb.co/bP80ssF/paketdata.jpg"
+            style="height: 45px"
+          />
+        </div>
+        <span>PDAM</span>
+      </div>
+
+      <div class="column">
+        <div onclick="window.location.href='#'">
+          <img
+            class="img"
+            src="https://i.ibb.co/86T4svR/Tlpsms.jpg"
+            style="height: 45px"
+          />
+        </div>
+        <span>BPJS</span>
+      </div>
+
+      <div class="column">
+        <div onclick="window.location.href='#'">
+          <img
+            class="img"
+            src="https://i.ibb.co/GcJ2Ykk/Voucher.jpg"
+            style="height: 45px"
+          />
+        </div>
+        <span>PPB</span>
+      </div>
+
+      <div class="column">
+        <div
+          onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/266137'"
+        >
+          <img
+            class="img"
+            src="https://i.ibb.co/KGk8hfr/Ewallet.jpg"
+            style="height: 45px"
+          />
+        </div>
+        <span>Internet</span>
+      </div>
+
+      <div class="column">
+        <div onclick="window.location.href='#'">
+          <img
+            class="img"
+            src="https://i.ibb.co/YZPf73g/Tagihan.jpg"
+            style="height: 45px"
+          />
+        </div>
+        <span>TV</span>
+      </div>
+
+      <div class="column">
+        <div
+          onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/99730'"
+        >
+          <img
+            class="img"
+            src="https://i.ibb.co/26jMxqV/Tokenpln.jpg"
+            style="height: 45px"
+          />
+        </div>
+        <span>PLN</span>
+      </div>
+
+      <div class="column">
+        <div onclick="window.location.href='#'">
+          <img
+            class="img"
+            src="https://i.ibb.co/N27vXvc/Game.jpg"
+            style="height: 45px"
+          />
+        </div>
+        <span>Game</span>
+      </div>
+    </div>
 
     <!--card menu end-->
     <h3>Rekomendasi Pilihan</h3>
@@ -309,24 +279,5 @@
         <p>Harga murah, proses mudah</p>
       </div>
     </div>
-
-    <script>
-      function openPage(pageName, elmnt, color) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].style.backgroundColor = "";
-        }
-        document.getElementById(pageName).style.display = "block";
-        elmnt.style.backgroundColor = color;
-      }
-
-      // Get the element with id="defaultOpen" and click on it
-      document.getElementById("defaultOpen").click();
-    </script>
   </body>
 </html>
