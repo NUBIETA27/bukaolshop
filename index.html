@@ -92,6 +92,13 @@
       .card2:hover {
         box-shadow: 2px 8px 16px 1px rgba(0, 0, 0, 0.2);
       }
+      .mysaldo{
+        float: left;
+        width: 50%;
+        padding: 0px;
+        height: 50px;
+        border-bottom-left-radius: 10px;
+      }
       
     </style>
   </head>
@@ -106,13 +113,20 @@
     
     <!--card menu-->
     <!--card1-->
-    <div style="
-    height: 100px; 
-    background-color: #fff; 
-    margin: 9px; 
-    border-radius: 10px;box-shadow: 2px 8px 16px 1px rgba(0, 0, 0, 0.2);
-    ">
-   
+    <div class="row" style="margin: 0px 9px 9px 9px;">
+  <div class="mysaldo">
+    <p>Saldo Kamu</p>
+    </div>
+    <div class="mysaldo">
+    <p>Membership</p>
+   </div>
+  
+   <div class="mysaldo">
+   <p>{{saldo_user}}</p>
+    </div>
+    <div class="mysaldo">
+    <p>{{nama_membership}}</p>
+   </div>
   </div>
 
     <div class="row">
