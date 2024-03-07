@@ -9,10 +9,35 @@
         box-sizing: border-box;
       }
       body {
-        background-color: #fff4e3;
+        margin: 0;
+        background-color: #f1f1f1;
         font-family: Arial, Helvetica, sans-serif;
-        margin: 5px 0px 5px 0px;
-        padding: 8px 8px 8px 8px;
+      }
+
+      #navbar {
+        background-color: #ffa000;
+        position: fixed;
+        top: -50px;
+        width: 100%;
+        display: block;
+        transition: top 0.3s;
+      }
+
+      #navbar img {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 15px;
+        text-decoration: none;
+        font-size: 17px;
+        height: 50px;
+      }
+      .background-color{
+        background-color: #ffa000;
+        height: 100px;
+        border-radius: 0px 0px 10px 10px;
+        box-shadow: 2px 8px 16px 1px rgba(0, 0, 0, 0.2);
       }
       .judul {
         background-color: #ffffff;
@@ -20,7 +45,6 @@
         height: 30px;
         padding: 9px;
         margin-top: 9px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         text-align: left;
         font-weight: bold;
       }
@@ -37,8 +61,9 @@
         background-color: #fff;
         border: 1px solid #8a8a8a42;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        border-radius: 0px 0px 9px 9px;
+        border-radius: 9px 9px 9px 9px;
         text-align: center;
+        margin: 0px 9px 9px 9px;
       }
       /* Clear floats after the columns */
       .row:after {
@@ -67,13 +92,32 @@
       .card2:hover {
         box-shadow: 2px 8px 16px 1px rgba(0, 0, 0, 0.2);
       }
+      
     </style>
   </head>
+
   <body>
+    <div id="navbar">
+      <img src="https://i.ibb.co/kQVp8YS/Logo-putih.png">sdsdf</a>
+    </div>
+    <div class="background-color">
+<div style="font-weight: bold; margin: 0px 10px 10px 10px; color: #fff; padding-top: 9px;">Hai,, {{nama_user}}<br>Yuk,, Transaksi
+    </div>
+    
     <!--card menu-->
     <!--card1-->
-    <div class="judul">PEMBELIAN</div>
+    <div style="
+    height: 100px; 
+    background-color: #fff; 
+    margin: 9px; 
+    border-radius: 10px;box-shadow: 2px 8px 16px 1px rgba(0, 0, 0, 0.2);
+    ">
+   
+  </div>
+
     <div class="row">
+      <div class="judul">PEMBELIAN</div>
+
       <div class="column">
         <div
           onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/106141'"
@@ -172,8 +216,9 @@
     </div>
 
     <!--card2-->
-    <div class="judul">PEMBAYARAN</div>
     <div class="row">
+      <div class="judul">PEMBAYARAN</div>
+
       <div class="column">
         <div
           onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/106141'"
@@ -279,5 +324,17 @@
         <p>Harga murah, proses mudah</p>
       </div>
     </div>
+    <script>
+      // When the user scrolls down 20px from the top of the document, slide down the navbar
+      window.onscroll = function() {scrollFunction()};
+      
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          document.getElementById("navbar").style.top = "0";
+        } else {
+          document.getElementById("navbar").style.top = "-50px";
+        }
+      }
+      </script>
   </body>
 </html>
