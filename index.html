@@ -1,356 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>sc new</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        background-color: #f1f1f1;
-        font-family: Arial, Helvetica, sans-serif;
-      }
+        * {
+            box-sizing: border-box;
+        }
 
-      #navbar {
-        background-color: #ffa000;
-        position: fixed;
-        top: -50px;
-        width: 100%;
-        display: block;
-        transition: top 0.3s;
-      }
+        body {
+            margin: 0;
+            color: #ffa000;
+            background-color: #f1f1f1;
+            font-family: monospace;
+        }
 
-      #navbar img {
-        float: left;
-        display: block;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 15px;
-        text-decoration: none;
-        font-size: 17px;
-        height: 50px;
-      }
-      .background-color{
-        background-color: #ffa000;
-        height: 100px;
-        border-radius: 0px 0px 10px 10px;
-        box-shadow: 2px 8px 16px 1px rgba(0, 0, 0, 0.2);
-      }
-      .judul {
-        background-color: #ffffff;
-        border-radius: 9px 9px 0px 0px;
-        height: 30px;
-        padding: 9px;
-        margin-top: 9px;
-        text-align: left;
-        font-weight: bold;
-      }
-      /* Create four equal columns that floats next to each other */
-      .column {
-        text-align: center;
-        font-size: small;
-        float: left;
-        width: 25%;
-        padding: 10px;
-        height: 105px; /* Should be removed. Only for demonstration */
-      }
-      .row {
-        background-color: #fff;
-        border: 1px solid #8a8a8a42;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        border-radius: 9px 9px 9px 9px;
-        text-align: center;
-        margin: 0px 9px 9px 9px;
-      }
-      /* Clear floats after the columns */
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-      .img {
+        #navbar {
+            background-color: #ffa000;
+            color: white;
+            font-weight: bold;
+            text-align: right;
+            position: fixed;
+            top: -75px;
+            width: 100%;
+            display: block;
+            height: 75px;
+            padding: 10px;
+            transition: top 0.3s;
+        }
+
+        #navbar img {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 17px;
+            height: 50px;
+        }
+
+        .backgroundcolor {
+            background-image: linear-gradient(45deg, #ff9800, #ffb74d);
+            height: 168px;
+            padding-top: 9px;
+            margin-bottom: 6px;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            box-shadow: 2px 8px 16px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .judulcard {
+            background-color: #ffffff;
+            border-radius: 9px 9px 0px 0px;
+            height: 30px;
+            padding: 9px;
+            margin-top: 0px;
+            text-align: left;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Create four equal columns that floats next to each other */
+        .column {
+            color: black;
+            text-align: center;
+            font-size: small;
+            float: left;
+            width: 25%;
+            padding: 10px;
+            height: 105px;
+            /* Should be removed. Only for demonstration */
+        }
+
+        .row {
+            background-color: #fff;
+            border: 1px solid #8a8a8a42;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 9px 9px 9px 9px;
+            text-align: center;
+            margin: 0px 14px 14px 14px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .img {
+            border-radius: 50%;
+            box-shadow: 0 4px 8px 0 rgba(71, 71, 71, 0.2);
+            margin-bottom: 5px;
+        }
+
+        /*style2*/
+        .card2 {
+            background-color: #fff;
+            border: 1px solid #8a8a8a42;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        .cardimg {
+            width: 100%;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        .card2:hover {
+            box-shadow: 2px 8px 16px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .mysaldo {
+            background-image: linear-gradient(45deg, #ff9800, #ffcc80);
+            color: white;
+            float: left;
+            width: 44.5%;
+            padding: 5px;
+            margin: 10px;
+            height: auto;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        .badge {
+font-size: 13px;
+position: absolute;
+float: right;
+        top: 6px;
+        right: 8px;
+padding: 1px 6px;
         border-radius: 50%;
-        box-shadow: 0 4px 8px 0 rgba(71, 71, 71, 0.2);
-        margin-bottom: 5px;
-      }
-
-      /*style2*/
-      .card2 {
-        background-color: #fff;
-        border: 1px solid #8a8a8a42;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        transition: 0.3s;
-        border-radius: 10px 10px 10px 10px;
-      }
-      .cardimg {
-        width: 100%;
-        border-radius: 10px 10px 10px 10px;
-      }
-      .card2:hover {
-        box-shadow: 2px 8px 16px 1px rgba(0, 0, 0, 0.2);
-      }
-      .mysaldo{
-        float: left;
-        width: 50%;
-        padding: 0px;
-        height: 50px;
-        border-bottom-left-radius: 10px;
-      }
-      
+        background-color: red;
+        color: black;
+font-weight: bold;
+}
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <div id="navbar">
-      <img src="https://i.ibb.co/kQVp8YS/Logo-putih.png">sdsdf</a>
+        <div style="background-color: white;color: #ffa000;border-radius: 7px; padding: 5px;">
+            <img src="https://i.ibb.co/y4YzbCx/LOGO-PANJANG.png" style="height: 40px;padding: 5px;">
+
+            <div id="tanggalwaktu"></div>
+            <div id="tanggalwaktu2"></div>
+        </div>
     </div>
-    <div class="background-color">
-<div style="font-weight: bold; margin: 0px 10px 10px 10px; color: #fff; padding-top: 9px;">Hai,, {{nama_user}}<br>Yuk,, Transaksi
-    </div>
-    
+
+    <div class="backgroundcolor">
+        <div style="font-weight: bold; margin: 0px 10px 10px 10px; color: #fff;">
+            Hai,, {{nama_user}}<br>Yuk,, Transaksi
+        </div>
+
+        <a onclick="window.location.href='https://ontrackppob.olshopku.com/akun/?page=notifikasi'">
+            <img src="https://i.ibb.co/0XXYxyW/notification.png" style="height: 30px;float: right;margin: -43px 15px 0px 0px;">
+            <span class="badge">{{total_notif}}</span>
+    </a>
     <!--card menu-->
     <!--card1-->
-    <div class="row" style="margin: 0px 9px 9px 9px;">
-  <div class="mysaldo">
-    <p>Saldo Kamu</p>
+    <div class="row">
+        <div class="mysaldo">
+            <div onclick="window.location.href='https://ontrackppob.olshopku.com/akun/?page=saldo_history'">
+                <img src="https://i.ibb.co/NWDFMV9/Saldo.png" style="height: 25px;"><br>
+                Saldo Kamu
+                <div id="saldo_user">{{saldo_user}}</div>
+            </div>
+        </div>
+        <div class="mysaldo">
+            <img src="https://i.ibb.co/GQHrfF1/20240309-084429.png" style="height: 25px;"><br>
+            Membership
+            <span>{{nama_membership}}</span>
+        </div>
     </div>
-    <div class="mysaldo">
-    <p>Membership</p>
-   </div>
-  
-   <div class="mysaldo">
-   <?php
-   echo number_format({{saldo_user}})."<br>";
-   ?>
     </div>
-    <div class="mysaldo">
-    <p>{{nama_membership}}</p>
-   </div>
-  </div>
 
     <div class="row">
-      <div class="judul">PEMBELIAN</div>
+        <div class="judulcard">PEMBELIAN</div>
 
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/106141'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/c65pZC2/pulsa.jpg"
-            style="height: 45px"
-          />
+        <div class="column">
+            <div onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/106141'">
+                <img class="img" src="https://i.ibb.co/c65pZC2/pulsa.jpg" style="height: 45px" />
+            </div>
+            <span>Pulsa</span>
         </div>
-        <span>Pulsa</span>
-      </div>
 
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/71464'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/bP80ssF/paketdata.jpg"
-            style="height: 45px"
-          />
+        <div class="column">
+            <div onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/71464'">
+                <img class="img" src="https://i.ibb.co/bP80ssF/paketdata.jpg" style="height: 45px" />
+            </div>
+            <span>Paket Data</span>
         </div>
-        <span>Paket Data</span>
-      </div>
 
-      <div class="column">
-        <div onclick="window.location.href='#'">
-          <img
-            class="img"
-            src="https://i.ibb.co/86T4svR/Tlpsms.jpg"
-            style="height: 45px"
-          />
+        <div class="column">
+            <div onclick="window.location.href='#'">
+                <img class="img" src="https://i.ibb.co/86T4svR/Tlpsms.jpg" style="height: 45px" />
+            </div>
+            <span>Telpon & SMS</span>
         </div>
-        <span>Telpon & SMS</span>
-      </div>
 
-      <div class="column">
-        <div onclick="window.location.href='#'">
-          <img
-            class="img"
-            src="https://i.ibb.co/GcJ2Ykk/Voucher.jpg"
-            style="height: 45px"
-          />
+        <div class="column">
+            <div onclick="window.location.href='#'">
+                <img class="img" src="https://i.ibb.co/GcJ2Ykk/Voucher.jpg" style="height: 45px" />
+            </div>
+            <span>Voucher</span>
         </div>
-        <span>Voucher</span>
-      </div>
 
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/266137'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/KGk8hfr/Ewallet.jpg"
-            style="height: 45px"
-          />
+        <div class="column">
+            <div onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/266137'">
+                <img class="img" src="https://i.ibb.co/KGk8hfr/Ewallet.jpg" style="height: 45px" />
+            </div>
+            <span>E-Wallet</span>
         </div>
-        <span>E-Wallet</span>
-      </div>
 
-      <div class="column">
-        <div onclick="window.location.href='#'">
-          <img
-            class="img"
-            src="https://i.ibb.co/YZPf73g/Tagihan.jpg"
-            style="height: 45px"
-          />
+        <div class="column">
+            <div onclick="window.location.href='https://ontrackppob.olshopku.com/digital/268642'">
+                <img class="img" src="https://i.ibb.co/xKn9wMT/Simcard.jpg" style="height: 45px" />
+            </div>
+            <span>Masa Aktif</span>
         </div>
-        <span>Tagihan</span>
-      </div>
 
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/99730'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/26jMxqV/Tokenpln.jpg"
-            style="height: 45px"
-          />
+        <div class="column">
+            <div onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/99730'">
+                <img class="img" src="https://i.ibb.co/26jMxqV/Tokenpln.jpg" style="height: 45px" />
+            </div>
+            <span>PLN</span>
         </div>
-        <span>PLN</span>
-      </div>
 
-      <div class="column">
-        <div onclick="window.location.href='#'">
-          <img
-            class="img"
-            src="https://i.ibb.co/N27vXvc/Game.jpg"
-            style="height: 45px"
-          />
+        <div class="column">
+            <div onclick="window.location.href='#'">
+                <img class="img" src="https://i.ibb.co/N27vXvc/Game.jpg" style="height: 45px" />
+            </div>
+            <span>Game</span>
         </div>
-        <span>Game</span>
-      </div>
+    </div>
+
+    <div style="padding-left: 14px;"><i>
+            <h2>Punya Kendala ?</h2>
+            <h4>Segera Hubungi Kami</h4>
+        </i>
     </div>
 
     <!--card2-->
     <div class="row">
-      <div class="judul">PEMBAYARAN</div>
+        <div class="judulcard">PEMBAYARAN</div>
 
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/106141'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/c65pZC2/pulsa.jpg"
-            style="height: 45px"
-          />
+        <div class="column">
+            <div onclick="window.location.href='https://ontrackppob.olshopku.com/digital/268313'">
+                <img class="img" src="https://i.ibb.co/p1YjbYz/Listrik.jpg" style="height: 45px" />
+            </div>
+            <span>Listrik</span>
         </div>
-        <span>Listrik</span>
-      </div>
 
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/71464'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/bP80ssF/paketdata.jpg"
-            style="height: 45px"
-          />
+        <div class="column">
+            <div onclick="window.location.href='https://ontrackppob.olshopku.com/digital/268582'">
+                <img class="img" src="https://i.ibb.co/FxNFM8c/Pdam.jpg" style="height: 45px" />
+            </div>
+            <span>PDAM</span>
         </div>
-        <span>PDAM</span>
-      </div>
 
-      <div class="column">
-        <div onclick="window.location.href='#'">
-          <img
-            class="img"
-            src="https://i.ibb.co/86T4svR/Tlpsms.jpg"
-            style="height: 45px"
-          />
+        <div class="column">
+            <div onclick="window.location.href='https://ontrackppob.olshopku.com/digital/268357'">
+                <img class="img" src="https://i.ibb.co/s31PNmK/Kesehatan.jpg" style="height: 45px" />
+            </div>
+            <span>BPJS</span>
         </div>
-        <span>BPJS</span>
-      </div>
 
-      <div class="column">
-        <div onclick="window.location.href='#'">
-          <img
-            class="img"
-            src="https://i.ibb.co/GcJ2Ykk/Voucher.jpg"
-            style="height: 45px"
-          />
+        <div class="column">
+            <div onclick="window.location.href='#'">
+                <img class="img" src="https://i.ibb.co/YZPf73g/Tagihan.jpg" style="height: 45px" />
+            </div>
+            <span>PPB</span>
         </div>
-        <span>PPB</span>
-      </div>
 
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/266137'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/KGk8hfr/Ewallet.jpg"
-            style="height: 45px"
-          />
+        <div class="column">
+            <div onclick="window.location.href='https://ontrackppob.olshopku.com/digital/268089'">
+                <img class="img" src="https://i.ibb.co/y0FYGT8/Wifi.jpg" style="height: 45px" />
+            </div>
+            <span>Internet</span>
         </div>
-        <span>Internet</span>
-      </div>
 
-      <div class="column">
-        <div onclick="window.location.href='#'">
-          <img
-            class="img"
-            src="https://i.ibb.co/YZPf73g/Tagihan.jpg"
-            style="height: 45px"
-          />
+        <div class="column">
+            <div onclick="window.location.href='#'">
+                <img class="img" src="https://i.ibb.co/Q6wTmQK/Tv.jpg" style="height: 45px" />
+            </div>
+            <span>TV</span>
         </div>
-        <span>TV</span>
-      </div>
 
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/99730'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/26jMxqV/Tokenpln.jpg"
-            style="height: 45px"
-          />
+        <div class="column">
+            <div onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/99730'">
+                <img class="img" src="https://i.ibb.co/26jMxqV/Tokenpln.jpg" style="height: 45px" />
+            </div>
+            <span>PLN</span>
         </div>
-        <span>PLN</span>
-      </div>
 
-      <div class="column">
-        <div onclick="window.location.href='#'">
-          <img
-            class="img"
-            src="https://i.ibb.co/N27vXvc/Game.jpg"
-            style="height: 45px"
-          />
+        <div class="column">
+            <div onclick="window.location.href='#'">
+                <img class="img" src="https://i.ibb.co/N27vXvc/Game.jpg" style="height: 45px" />
+            </div>
+            <span>Game</span>
         </div>
-        <span>Game</span>
-      </div>
     </div>
 
     <!--card menu end-->
-    <h3>Rekomendasi Pilihan</h3>
-    <div class="card2">
-      <img class="cardimg" src="https://i.ibb.co/dMjRqkS/Banne01.png" alt="" />
-      <div class="container">
-        <p>Harga murah, proses mudah</p>
-      </div>
+
+    <div class="row">
+        <div class="judul">Rekomendasi Pilihan</div>
+        <img class="cardimg" src="https://i.ibb.co/dMjRqkS/Banne01.png" alt="" />
+        <div class="container">
+            <p>Harga murah, proses mudah</p>
+        </div>
     </div>
+
     <script>
-      // When the user scrolls down 20px from the top of the document, slide down the navbar
-      window.onscroll = function() {scrollFunction()};
-      
-      function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          document.getElementById("navbar").style.top = "0";
-        } else {
-          document.getElementById("navbar").style.top = "-50px";
+        var tw = new Date();
+        if (tw.getTimezoneOffset() == 0)(a = tw.getTime() + (7 * 60 * 60 * 1000))
+        else(a = tw.getTime());
+        tw.setTime(a);
+
+        var tahun = tw.getFullYear();
+        var hari = tw.getDay();
+        var bulan = tw.getMonth();
+        var tanggal = tw.getDate();
+        var hariarray = new Array("Minggu,", "Senin,", "Selasa,", "Rabu,", "Kamis,", "Jum'at,", "Sabtu,");
+        var bulanarray = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "Nopember", "Desember");
+        document.getElementById("tanggalwaktu").innerHTML = hariarray[hari] + " " + tanggal + " " + bulanarray[bulan] + " " + tahun;
+        document.getElementById("tanggalwaktu2").innerHTML = ((tw.getHours() < 10) ? "0" : "") + tw.getHours() + ":" + ((tw.getMinutes() < 10) ? "0" : "") + tw.getMinutes() + (" W.I.B ");
+    </script>
+
+    <script>
+        // When the user scrolls down 20px from the top of the document, slide down the navbar
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("navbar").style.top = "0px";
+            } else {
+                document.getElementById("navbar").style.top = "-75px";
+            }
         }
-      }
-      </script>
-  </body>
+    </script>
+
+    <script type="text/javascript">
+        function rubah(angka) {
+            var reverse = angka.toString().split('').reverse().join(''),
+                ribuan = reverse.match(/\d{1,3}/g);
+            ribuan = ribuan.join('.').split('').reverse().join('');
+            return "Rp " + ribuan;
+        }
+        document.getElementById("saldo_user").innerText = rubah(document.getElementById("saldo_user").textContent);
+
+
+        document.getElementById("id_user").innerText = rubah(document.getElementById("id_user").textContent);
+    </script>
+</body>
+
 </html>
