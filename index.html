@@ -1,548 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>sc new</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      * {
-        box-sizing: border-box;
-      }
+        * {
+            box-sizing: border-box;
+        }
 
-      body {
-        margin: 0;
-        color: #ffa000;
-        background-color: #f1f1f1;
-        font-family: monospace;
-      }
+        body {
+            margin: 0;
+            color: #ffa000;
+            background-color: #f1f1f1;
+            font-family: monospace;
+        }
 
-      #navbar {
-        background-color: #ffa000;
-        color: white;
-        font-weight: bold;
-        text-align: right;
-        position: fixed;
-        top: -75px;
-        width: 100%;
-        display: block;
-        height: 75px;
-        padding: 10px;
-        transition: top 0.3s;
-      }
+        #navbar {
+            background-color: #ffa000;
+            color: white;
+            font-weight: bold;
+            text-align: right;
+            position: fixed;
+            top: -75px;
+            width: 100%;
+            display: block;
+            height: 75px;
+            padding: 10px;
+            transition: top 0.3s;
+        }
 
-      #navbar img {
-        float: left;
-        display: block;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 15px;
-        text-decoration: none;
-        font-size: 17px;
-        height: 50px;
-      }
+        #navbar img {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 17px;
+            height: 50px;
+        }
 
-      .backgroundcolor {
-        background-color: #ffa000;
-        height: auto;
-        width: 100%;
-        padding: 9px 0px 0px 0px;
-        margin-bottom: 9px;
-        border-bottom-right-radius: 20px;
-        border-bottom-left-radius: 20px;
-        box-shadow: 2px 8px 16px 1px rgba(0, 0, 0, 0.2);
-      }
+        .backgroundcolor {
+color: white;
+            background-color: #ffa000;
+            height: auto;
+            width: 100%;
+            padding: 9px 0px 0px 0px;
+            margin-bottom: 9px;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            box-shadow: 2px 1px 4px 1px #777777;
+        }
 
-      .cardsaldo {
-        display: flex;
-        align-items: center;
-        background-color: white;
-        height: auto;
-        width: auto;
-        margin: 0px 10px 0px 10px;
-        border-radius: 10px;
-      }
+        /* Create two unequal columns that floats next to each other */
+        /* Left column */
+        .cardcolumn {
+            font-family: monospace;
+            float: left;
+            width: 50%;
+            border: none;
+            background: none;
+            color: white;
+        }
 
-      .mysaldo {
-        text-align: center;
-        background-image: linear-gradient(45deg, #ff9800, #ffcc80);
-        color: white;
-        float: left;
-        margin: 5px;
-        padding: 10px;
-        width: 50%;
-        height: 90px;
-        font-weight: bold;
-        border-radius: 10px;
-      }
+        .card div {
+            font-weight: bold;
+        }
 
-      .judulcard {
-        background-color: #ffffff;
-        border-radius: 9px 9px 0px 0px;
-        height: 30px;
-        padding: 9px;
-        margin-top: 0px;
-        text-align: left;
-        font-weight: bold;
-        text-align: center;
-      }
+        /* Add a card effect for articles */
+        .card {
+            padding: 10px;
+            margin-top: 10px;
+        }
 
-      /* Create four equal columns that floats next to each other */
-      .column {
-        color: black;
-        text-align: center;
-        font-size: small;
-        float: left;
-        width: 25%;
-        padding: 10px;
-        height: 105px;
-        /* Should be removed. Only for demonstration */
-      }
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
 
-      .img {
-        border-radius: 50%;
-        box-shadow: 0 4px 8px 0 rgba(71, 71, 71, 0.2);
-        margin-bottom: 5px;
-      }
+        /* Footer */
+        .footer {
+            display: flex;
+            padding: 10px;
+            text-align: center;
+            margin-top: 5px;
+        }
 
-      /*style2*/
-      .card2 {
-        background-color: #fff;
-        border: 1px solid #8a8a8a42;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        transition: 0.3s;
-        border-radius: 10px 10px 10px 10px;
-      }
+        .footertopup {
 
-      .cardimg {
-        width: 100%;
-        border-radius: 10px 10px 10px 10px;
-      }
+            font-weight: bold;
+            background: none;
+            border: none;
+            width: 50%;
+        }
 
-      .card2:hover {
-        box-shadow: 2px 8px 16px 1px rgba(0, 0, 0, 0.2);
-      }
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 100%) {
 
-      .badge {
-        font-size: 13px;
-        position: absolute;
-        float: right;
-        top: 6px;
-        right: 8px;
-        padding: 1px 6px;
-        border-radius: 50%;
-        background-color: red;
-        color: black;
-        font-weight: bold;
-      }
+            .leftcolumn,
+            .rightcolumn {
+                width: 50%;
+                padding: 0;
+            }
+        }
 
-      /* Style the tab */
-      .tab {
-        overflow: hidden;
-        padding: 5px 10px 5px 10px;
-        border-bottom: 1px solid #ccc;
-        background-color: #ffdd9e;
-      }
-      .tablinks {
-        width: 50%;
-      }
-      /* Style the buttons inside the tab */
-      .tab button {
-        background-color: inherit;
-        float: left;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        padding: 14px 16px;
-        transition: 0.3s;
-        font-size: 17px;
-      }
+        .cardsaldo {
 
-      /* Change background color of buttons on hover */
-      .tab button:hover {
-        background-color: #ddd;
-      }
+            align-items: center;
+            background-color: #ffa000;
+            margin: 0px 10px 0px 10px;
+            border-radius: 10px;
+            box-shadow: inset -3px -1px 3px #ffffff,
+                inset 3px 1px 3px #ceced1;
+        }
 
-      /* Create an active/current tablink class */
-      .tab button.active {
-        background-color: #ffa000;
-        color: white;
-      }
+        /* Create four equal columns that floats next to each other */
+        .column {
+            color: black;
+            text-align: center;
+            font-size: small;
+            float: left;
+            width: 25%;
+            padding: 10px;
+            height: 105px;
+            /* Should be removed. Only for demonstration */
+        }
 
-      /* Style the tab content */
-      .tabcontent {
-        display: none;
-        padding: 12px;
-      }
+        .column .img {
+            border-radius: 50%;
+            box-shadow: 2px 1px 4px 1px #777777;
+            margin-bottom: 5px;
+        }
+
+        .cardmenu {
+            background-color: white;
+            border-radius: 20px;
+            margin: 10px;
+            box-shadow: 2px 1px 4px 1px #777777;
+        }
+
+        /* Style the tab */
+        .tab {
+            overflow: hidden;
+            padding: 5px 10px 5px 10px;
+        }
+
+        .tablinks {
+            border-radius: 20px;
+            width: auto;
+            height: 30px;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            color: #6A6A6A;
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            padding: 7px 14px 14px 14px;
+            transition: 0.3s;
+            font-size: 12px;
+            font-weight: bold;
+            font-family: monospace;
+            text-align: center;
+        }
+
+        /* Change background color of buttons on hover */
+
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #f3f3f3;
+            color: #F39201;
+        }
+
+        /* Style the tab content */
+        .tabcontent {}
+
+        .tabcontent:after {
+            padding: 12px;
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        hr {
+            margin: 0px 10px 0px 10px;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <div id="navbar">
-      <div
-        style="
+        <div style="
           background-color: white;
           color: #ffa000;
           border-radius: 7px;
           padding: 5px;
-        "
-      >
-        <img
-          src="https://i.ibb.co/y4YzbCx/LOGO-PANJANG.png"
-          style="height: 40px; padding: 5px"
-        />
+        ">
+            <img src="https://i.ibb.co/y4YzbCx/LOGO-PANJANG.png" style="height: 40px; padding: 5px" />
 
-        <div id="tanggalwaktu"></div>
-        <div id="tanggalwaktu2"></div>
-      </div>
+            <div id="tanggalwaktu"></div>
+            <div id="tanggalwaktu2"></div>
+        </div>
     </div>
 
     <div class="backgroundcolor">
-      <div
-        style="
+        <div style="
           font-weight: bold;
           font-size: 15px;
           margin: 0px 10px 10px 10px;
-          color: #fff;
-        "
-      >
-        Hai,, {{nama_user}}
-        <div style="font-size: 12px">Semoga Hari Ini Rezekimu Lancar</div>
-      </div>
-      <div class="cardsaldo">
-        <div class="mysaldo">
-          <div
-            onclick="window.location.href='https://ontrackppob.olshopku.com/akun/?page=saldo_history'"
-          >
-            <img
-              src="https://i.ibb.co/NWDFMV9/Saldo.png"
-              style="height: 25px"
-            /><br />
-            Saldo Kamu
-            <div id="saldo_user">{{saldo_user}}</div>
-          </div>
+        ">
+            Hai,, {{nama_user}}
+            <div style="font-size: 12px">Semoga Hari Ini Rezekimu Lancar</div>
         </div>
+        <div class="cardsaldo">
 
-        <div class="mysaldo">
-          <div onclick="window.location.href='#'">
-            <img
-              src="https://i.ibb.co/GQHrfF1/20240309-084429.png"
-              style="height: 25px"
-            /><br />
-            Membership
-            <div>{{nama_membership}}</div>
-          </div>
+            <div class="row">
+                <a href="https://ontrackppob.bukaolshop.site/refresh_saldo">
+                    <button class="cardcolumn">
+                        <div class="card">
+                            Saldo
+                            <div id="saldo_user">{{saldo_user}}</div>
+                        </div>
+                    </button>
+                </a>
+                <button class="cardcolumn">
+                    <div class="card">
+                        Membership
+                        <div>{{nama_membership}}</div>
+                    </div>
+                </button>
+            
+            <hr>
+
+
+                    <div class="cardcolumn"onclick="window.location.href='https://ontrackppob.olshopku.com/akun/?page=topup'">
+                        <img style="width: 30px;" src="https://i.ibb.co/KxxtsxG/Wallet.png">
+                        <div>Top-Up</div>
+                    </div>
+                
+
+                    <div class="cardcolumn" onclick="window.location.href='https://ontrackppob.bukaolshop.site/pages?kontak'">
+                        <img style="width: 30px;" src="https://i.ibb.co/Cwf6Zhv/24-hours.png">
+                        <div>Pusat Bantuan</div>
+                    </div>
+                
+            </div>
         </div>
-      </div>
-      <img
-        style="
+        <img style="
           width: 100%;
           margin-bottom: -4px;
           border-radius: 0px 0px 20px 20px;
-        "
-        src="https://i.ibb.co/61qrFr2/b629c12b-8cb7-4631-9041-9edc2b6f3cae.gif"
-      />
+        " src="https://i.ibb.co/61qrFr2/b629c12b-8cb7-4631-9041-9edc2b6f3cae.gif" />
     </div>
 
     <!--card menu-->
+    <div class="cardmenu">
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">
+                Pembelian
+            </button>
+            <button class="tablinks" onclick="openCity(event, 'Paris')">
+                Pembayaran
+            </button>
+        </div>
+        <hr>
+        <!--card1-->
 
-    <div class="tab">
-      <button
-        class="tablinks"
-        onclick="openCity(event, 'London')"
-        id="defaultOpen"
-        style="font-weight: bold"
-      >
-        Pembayaran
-      </button>
-      <button
-        class="tablinks"
-        onclick="openCity(event, 'Paris')"
-        style="font-weight: bold"
-      >
-        Pembelian
-      </button>
+        <div id="London" class="tabcontent">
+            <div class="column">
+                <div onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/106141'">
+                    <img class="img" src="https://i.ibb.co/c65pZC2/pulsa.jpg" style="height: 45px" />
+                </div>
+                <span>Pulsa</span>
+            </div>
+
+            <div class="column">
+                <div onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/71464'">
+                    <img class="img" src="https://i.ibb.co/bP80ssF/paketdata.jpg" style="height: 45px" />
+                </div>
+                <span>Paket Data</span>
+            </div>
+
+            <div class="column">
+                <div onclick="window.location.href='https://ontrackppob.olshopku.com/digital/268692'">
+                    <img class="img" src="https://i.ibb.co/86T4svR/Tlpsms.jpg" style="height: 45px" />
+                </div>
+                <span>Telpon & SMS</span>
+            </div>
+
+            <div class="column">
+                <div onclick="window.location.href='https://ontrackppob.olshopku.com/digital/270832'">
+                    <img class="img" src="https://i.ibb.co/GcJ2Ykk/Voucher.jpg" style="height: 45px" />
+                </div>
+                <span>Voucher</span>
+            </div>
+
+            <div class="column">
+                <div onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/266137'">
+                    <img class="img" src="https://i.ibb.co/KGk8hfr/Ewallet.jpg" style="height: 45px" />
+                </div>
+                <span>E-Money</span>
+            </div>
+
+            <div class="column">
+                <div onclick="window.location.href='https://ontrackppob.olshopku.com/digital/268642'">
+                    <img class="img" src="https://i.ibb.co/xKn9wMT/Simcard.jpg" style="height: 45px" />
+                </div>
+                <span>Masa Aktif</span>
+            </div>
+
+            <div class="column">
+                <div onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/99730'">
+                    <img class="img" src="https://i.ibb.co/26jMxqV/Tokenpln.jpg" style="height: 45px" />
+                </div>
+                <span>Token PLN</span>
+            </div>
+
+            <div class="column">
+                <div onclick="window.location.href='https://ontrackppob.olshopku.com/digital/269135'">
+                    <img class="img" src="https://i.ibb.co/N27vXvc/Game.jpg" style="height: 45px" />
+                </div>
+                <span>Game</span>
+            </div>
+        </div>
+
+        <!--card2-->
+        <div id="Paris" class="tabcontent">
+            <div class="column">
+                <div onclick="window.location.href='https://ontrackppob.olshopku.com/digital/268313'">
+                    <img class="img" src="https://i.ibb.co/p1YjbYz/Listrik.jpg" style="height: 45px" />
+                </div>
+                <span>Listrik</span>
+            </div>
+
+            <div class="column">
+                <div onclick="window.location.href='https://ontrackppob.olshopku.com/digital/268582'">
+                    <img class="img" src="https://i.ibb.co/FxNFM8c/Pdam.jpg" style="height: 45px" />
+                </div>
+                <span>PDAM</span>
+            </div>
+
+            <div class="column">
+                <div onclick="window.location.href='https://ontrackppob.olshopku.com/digital/268357'">
+                    <img class="img" src="https://i.ibb.co/s31PNmK/Kesehatan.jpg" style="height: 45px" />
+                </div>
+                <span>BPJS</span>
+            </div>
+
+            <div class="column">
+                <div onclick="window.location.href='#'">
+                    <img class="img" src="https://i.ibb.co/YZPf73g/Tagihan.jpg" style="height: 45px" />
+                </div>
+                <span>PPB</span>
+            </div>
+
+            <div class="column">
+                <div onclick="window.location.href='https://ontrackppob.olshopku.com/digital/268089'">
+                    <img class="img" src="https://i.ibb.co/y0FYGT8/Wifi.jpg" style="height: 45px" />
+                </div>
+                <span>Internet</span>
+            </div>
+
+            <div class="column">
+                <div onclick="window.location.href='https://ontrackppob.olshopku.com/digital/270152'">
+                    <img class="img" src="https://i.ibb.co/Q6wTmQK/Tv.jpg" style="height: 45px" />
+                </div>
+                <span>Tagihan TV Kabel</span>
+            </div>
+
+            <div class="column">
+                <div onclick="window.location.href='https://ontrackppob.olshopku.com/digital/270110'">
+                    <img class="img" src="https://i.ibb.co/nnWWVCV/Multifinance.jpg" style="height: 45px" />
+                </div>
+                <span>Angsuran Kredit</span>
+            </div>
+
+            <div class="column">
+                <div onclick="window.location.href='https://ontrackppob.olshopku.com/digital/271452'">
+                    <img class="img" src="https://i.ibb.co/rZtFKBW/Samsat.jpg" style="height: 45px" />
+                </div>
+                <span>E-Samsat</span>
+            </div>
+        </div>
     </div>
-
-    <!--card1-->
-
-    <div id="London" class="tabcontent">
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/106141'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/c65pZC2/pulsa.jpg"
-            style="height: 45px"
-          />
-        </div>
-        <span>Pulsa</span>
-      </div>
-
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/71464'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/bP80ssF/paketdata.jpg"
-            style="height: 45px"
-          />
-        </div>
-        <span>Paket Data</span>
-      </div>
-
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.olshopku.com/digital/268692'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/86T4svR/Tlpsms.jpg"
-            style="height: 45px"
-          />
-        </div>
-        <span>Telpon & SMS</span>
-      </div>
-
-      <div class="column">
-        <div onclick="window.location.href='#'">
-          <img
-            class="img"
-            src="https://i.ibb.co/GcJ2Ykk/Voucher.jpg"
-            style="height: 45px"
-          />
-        </div>
-        <span>Voucher</span>
-      </div>
-
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/266137'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/KGk8hfr/Ewallet.jpg"
-            style="height: 45px"
-          />
-        </div>
-        <span>E-Wallet</span>
-      </div>
-
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.olshopku.com/digital/268642'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/xKn9wMT/Simcard.jpg"
-            style="height: 45px"
-          />
-        </div>
-        <span>Masa Aktif</span>
-      </div>
-
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.bukaolshop.site/digital/99730'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/26jMxqV/Tokenpln.jpg"
-            style="height: 45px"
-          />
-        </div>
-        <span>PLN</span>
-      </div>
-
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.olshopku.com/digital/269135'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/N27vXvc/Game.jpg"
-            style="height: 45px"
-          />
-        </div>
-        <span>Game</span>
-      </div>
-    </div>
-
-    <!--card2-->
-    <div id="Paris" class="tabcontent">
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.olshopku.com/digital/268313'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/p1YjbYz/Listrik.jpg"
-            style="height: 45px"
-          />
-        </div>
-        <span>Listrik</span>
-      </div>
-
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.olshopku.com/digital/268582'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/FxNFM8c/Pdam.jpg"
-            style="height: 45px"
-          />
-        </div>
-        <span>PDAM</span>
-      </div>
-
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.olshopku.com/digital/268357'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/s31PNmK/Kesehatan.jpg"
-            style="height: 45px"
-          />
-        </div>
-        <span>BPJS</span>
-      </div>
-
-      <div class="column">
-        <div onclick="window.location.href='#'">
-          <img
-            class="img"
-            src="https://i.ibb.co/YZPf73g/Tagihan.jpg"
-            style="height: 45px"
-          />
-        </div>
-        <span>PPB</span>
-      </div>
-
-      <div class="column">
-        <div
-          onclick="window.location.href='https://ontrackppob.olshopku.com/digital/268089'"
-        >
-          <img
-            class="img"
-            src="https://i.ibb.co/y0FYGT8/Wifi.jpg"
-            style="height: 45px"
-          />
-        </div>
-        <span>Internet</span>
-      </div>
-
-      <div class="column">
-        <div onclick="window.location.href='#'">
-          <img
-            class="img"
-            src="https://i.ibb.co/Q6wTmQK/Tv.jpg"
-            style="height: 45px"
-          />
-        </div>
-        <span>TV</span>
-      </div>
-    </div>
-
     <!--card menu end-->
     <!--banner-->
     <div>
-      <img
-        style="width: 100%; padding: 0px 14px 10px 14px"
-        src="https://i.ibb.co/604Grpp/Banner1.png"
-      />
+        <img style="width: 100%; padding: 0px 14px 10px 14px" src="https://i.ibb.co/604Grpp/Banner1.png" />
     </div>
     <script>
-      var tw = new Date();
-      if (tw.getTimezoneOffset() == 0) a = tw.getTime() + 7 * 60 * 60 * 1000;
-      else a = tw.getTime();
-      tw.setTime(a);
+        var tw = new Date();
+        if (tw.getTimezoneOffset() == 0) a = tw.getTime() + 7 * 60 * 60 * 1000;
+        else a = tw.getTime();
+        tw.setTime(a);
 
-      var tahun = tw.getFullYear();
-      var hari = tw.getDay();
-      var bulan = tw.getMonth();
-      var tanggal = tw.getDate();
-      var hariarray = new Array(
-        "Minggu,",
-        "Senin,",
-        "Selasa,",
-        "Rabu,",
-        "Kamis,",
-        "Jum'at,",
-        "Sabtu,"
-      );
-      var bulanarray = new Array(
-        "Januari",
-        "Februari",
-        "Maret",
-        "April",
-        "Mei",
-        "Juni",
-        "Juli",
-        "Agustus",
-        "September",
-        "Oktober",
-        "Nopember",
-        "Desember"
-      );
-      document.getElementById("tanggalwaktu").innerHTML =
-        hariarray[hari] + " " + tanggal + " " + bulanarray[bulan] + " " + tahun;
-      document.getElementById("tanggalwaktu2").innerHTML =
-        (tw.getHours() < 10 ? "0" : "") +
-        tw.getHours() +
-        ":" +
-        (tw.getMinutes() < 10 ? "0" : "") +
-        tw.getMinutes() +
-        " W.I.B ";
+        var tahun = tw.getFullYear();
+        var hari = tw.getDay();
+        var bulan = tw.getMonth();
+        var tanggal = tw.getDate();
+        var hariarray = new Array(
+            "Minggu,",
+            "Senin,",
+            "Selasa,",
+            "Rabu,",
+            "Kamis,",
+            "Jum'at,",
+            "Sabtu,"
+        );
+        var bulanarray = new Array(
+            "Januari",
+            "Februari",
+            "Maret",
+            "April",
+            "Mei",
+            "Juni",
+            "Juli",
+            "Agustus",
+            "September",
+            "Oktober",
+            "Nopember",
+            "Desember"
+        );
+        document.getElementById("tanggalwaktu").innerHTML =
+            hariarray[hari] + " " + tanggal + " " + bulanarray[bulan] + " " + tahun;
+        document.getElementById("tanggalwaktu2").innerHTML =
+            (tw.getHours() < 10 ? "0" : "") +
+            tw.getHours() +
+            ":" +
+            (tw.getMinutes() < 10 ? "0" : "") +
+            tw.getMinutes() +
+            " W.I.B ";
 
-      // When the user scrolls down 20px from the top of the document, slide down the navbar
-      window.onscroll = function () {
-        scrollFunction();
-      };
-      function scrollFunction() {
-        if (
-          document.body.scrollTop > 20 ||
-          document.documentElement.scrollTop > 20
-        ) {
-          document.getElementById("navbar").style.top = "0px";
-        } else {
-          document.getElementById("navbar").style.top = "-75px";
-        }
-      }
+        // When the user scrolls down 20px from the top of the document, slide down the navbar
+        window.onscroll = function() {
+            scrollFunction();
+        };
 
-      //javascrip tabmenu
-      function openCity(evt, cityName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
+        function scrollFunction() {
+            if (
+                document.body.scrollTop > 20 ||
+                document.documentElement.scrollTop > 20
+            ) {
+                document.getElementById("navbar").style.top = "0px";
+            } else {
+                document.getElementById("navbar").style.top = "-75px";
+            }
         }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+        //javascrip tabmenu
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
         }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
-      }
-      document.getElementById("defaultOpen").click();
+        document.getElementById("defaultOpen").click();
     </script>
 
     <script type="text/javascript">
-      function rubah(angka) {
-        var reverse = angka.toString().split("").reverse().join(""),
-          ribuan = reverse.match(/\d{1,3}/g);
-        ribuan = ribuan.join(".").split("").reverse().join("");
-        return "Rp " + ribuan;
-      }
-      document.getElementById("saldo_user").innerText = rubah(
-        document.getElementById("saldo_user").textContent
-      );
+        function rubah(angka) {
+            var reverse = angka.toString().split("").reverse().join(""),
+                ribuan = reverse.match(/\d{1,3}/g);
+            ribuan = ribuan.join(".").split("").reverse().join("");
+            return "Rp " + ribuan;
+        }
+        document.getElementById("saldo_user").innerText = rubah(
+            document.getElementById("saldo_user").textContent
+        );
 
-      document.getElementById("id_user").innerText = rubah(
-        document.getElementById("id_user").textContent
-      );
+        document.getElementById("id_user").innerText = rubah(
+            document.getElementById("id_user").textContent
+        );
     </script>
-  </body>
+</body>
+
 </html>
