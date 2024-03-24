@@ -43,7 +43,6 @@
         }
 
         .backgroundcolor {
-color: white;
             background-color: #ffa000;
             height: auto;
             width: 100%;
@@ -53,6 +52,7 @@ color: white;
             border-bottom-left-radius: 20px;
             box-shadow: 2px 1px 4px 1px #777777;
         }
+
 
         /* Create two unequal columns that floats next to each other */
         /* Left column */
@@ -71,6 +71,7 @@ color: white;
 
         /* Add a card effect for articles */
         .card {
+
             padding: 10px;
             margin-top: 10px;
         }
@@ -91,12 +92,13 @@ color: white;
         }
 
         .footertopup {
-
+            color: white;
             font-weight: bold;
             background: none;
             border: none;
             width: 50%;
         }
+
 
         /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
         @media screen and (max-width: 100%) {
@@ -109,14 +111,15 @@ color: white;
         }
 
         .cardsaldo {
-
+            color: white;
             align-items: center;
-            background-color: #ffa000;
+            background-color: #B56E01;
+            height: auto;
+            width: auto;
             margin: 0px 10px 0px 10px;
             border-radius: 10px;
-            box-shadow: inset -3px -1px 3px #ffffff,
-                inset 3px 1px 3px #ceced1;
         }
+
 
         /* Create four equal columns that floats next to each other */
         .column {
@@ -130,7 +133,7 @@ color: white;
             /* Should be removed. Only for demonstration */
         }
 
-        .column .img {
+        .img {
             border-radius: 50%;
             box-shadow: 2px 1px 4px 1px #777777;
             margin-bottom: 5px;
@@ -147,6 +150,8 @@ color: white;
         .tab {
             overflow: hidden;
             padding: 5px 10px 5px 10px;
+
+
         }
 
         .tablinks {
@@ -215,6 +220,7 @@ color: white;
           font-weight: bold;
           font-size: 15px;
           margin: 0px 10px 10px 10px;
+          color: #fff;
         ">
             Hai,, {{nama_user}}
             <div style="font-size: 12px">Semoga Hari Ini Rezekimu Lancar</div>
@@ -236,21 +242,21 @@ color: white;
                         <div>{{nama_membership}}</div>
                     </div>
                 </button>
-            
+            </div>
             <hr>
-
-
-                    <div class="cardcolumn"onclick="window.location.href='https://ontrackppob.olshopku.com/akun/?page=topup'">
+            <div class="footer">
+                <button class="footertopup">
+                    <div onclick="window.location.href='https://ontrackppob.olshopku.com/akun/?page=topup'">
                         <img style="width: 30px;" src="https://i.ibb.co/KxxtsxG/Wallet.png">
                         <div>Top-Up</div>
                     </div>
-                
-
-                    <div class="cardcolumn" onclick="window.location.href='https://ontrackppob.bukaolshop.site/pages?kontak'">
+                </button>
+                <button class="footertopup">
+                    <div onclick="window.location.href='https://ontrackppob.bukaolshop.site/pages?kontak'">
                         <img style="width: 30px;" src="https://i.ibb.co/Cwf6Zhv/24-hours.png">
                         <div>Pusat Bantuan</div>
                     </div>
-                
+                </button>
             </div>
         </div>
         <img style="
@@ -270,7 +276,7 @@ color: white;
                 Pembayaran
             </button>
         </div>
-        <hr>
+<hr>
         <!--card1-->
 
         <div id="London" class="tabcontent">
@@ -382,7 +388,7 @@ color: white;
                 <span>Angsuran Kredit</span>
             </div>
 
-            <div class="column">
+ <div class="column">
                 <div onclick="window.location.href='https://ontrackppob.olshopku.com/digital/271452'">
                     <img class="img" src="https://i.ibb.co/rZtFKBW/Samsat.jpg" style="height: 45px" />
                 </div>
