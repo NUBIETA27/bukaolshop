@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      :root {
+        --color1: #ffa000;
+        --color2: #ecf0f3;
+        --color3: #fff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background-color: var(--color2);
+        font-family: monospace;
+      }
+      .navbar {
+        background-color: var(--color1);
+        width: 100%;
+        padding: 10px 10px 10px 10px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        box-shadow: 2px 1px 4px 1px #777777;
+      }
+      .hainama {
+        display: flex;
+        color: var(--color3);
+        font-size: 15px;
+        font-weight: bold;
+      }
+      .box {
+        background-color: var(--color1);
+        margin-top: 12px;
+        padding-bottom: 12px;
+        border-radius: 12px;
+        box-shadow: inset -2px -2px 3px #777777, inset 2px 2px 3px #ecf0f3;
+      }
+      .boxsaldo {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .menu {
+        text-decoration: none;
+        text-align: center;
+        color: var(--color2);
+        font-weight: bold;
+      }
+      .menu img {
+        height: 30px;
+      }
+      hr {
+        margin: 10px 10px 10px 10px;
+      }
+
+      /*cssmenu*/
+      .boxmenu{
+        display: grid;
+        grid-template-columns: repeat(4,2fr);
+      }
+    </style>
+  </head>
+  <body>
+    <!--navbar-->
+    <div class="navbar">
+      <div class="hainama">Hai, {{nama_user}}</div>
+      <div class="box">
+        <div class="boxsaldo">
+          <a
+            class="menu"
+            href="https://ontrackppob.bukaolshop.site/refresh_saldo">
+            <p>Saldo</p>
+            <div id="saldo_user">{{saldo_user}}</div>
+          </a>
+          <a class="menu" href="">
+            <p>Membership</p>
+            <div>{{nama_membership}}</div></a
+          >
+        </div>
+        <hr />
+        <div class="boxsaldo">
+          <a
+            class="menu"
+            onclick="window.location.href='https://ontrackppob.olshopku.com/akun/?page=topup'">
+            <img src="https://i.ibb.co/KxxtsxG/Wallet.png" />
+            <div>Top-Up</div>
+          </a>
+          <a
+            class="menu"
+            onclick="window.location.href='https://ontrackppob.bukaolshop.site/pages?kontak'">
+            <img src="https://i.ibb.co/Cwf6Zhv/24-hours.png" />
+            <div>Pusat Bantuan</div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!--navbarend-->
+    <!--menu-->
+    <div class="boxmenu"></div>
+  </body>
+</html>
